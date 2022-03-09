@@ -1,0 +1,188 @@
+/* 
+render song 
+scroll top
+load current song
+play / pause / seek
+play song when click
+CD rotate
+next / prev
+random
+next / repeat
+active song
+scroll menu 
+*/
+
+/* reset CSS */
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* responsive in mobile app */
+@media (max-width: 46.24em) {
+    /* background music */
+    .body{
+        max-width: 46.24em;
+    }
+    .active{
+        border: 4px solid red;
+    }
+    .music-album{
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        background-color: rgb(236, 234, 234);
+    }
+    .background-music{
+        padding-bottom: 10px;
+        display: flex;
+        margin: auto;
+    }
+    .background{
+        width: 100%;
+        border-radius: 50%;
+        background-size: cover;
+        margin: auto;
+        display: flex;
+        padding: 10%;
+        background-color: rgb(236, 234, 234);
+    }
+    .line{
+        margin: 30px 8%;
+    }
+    .music-dot{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #FF4500;
+        border-radius: 50%;
+        bottom: -2.5px;
+    }
+
+    .music-content{
+        text-align: center;
+    }
+    .now-playing{
+        color: rgb(236, 41, 6);
+    }
+    .music-name{
+        color: #483D8B;
+        padding: 10px;
+    }
+    .music-artist{
+        color: #757575;
+        padding-bottom: 30px;
+    }
+
+
+    /* function play music */
+    .music-function{
+
+    }
+    .play-music{
+        text-align: center;
+    }
+    .play-toggle{
+        display: inline-block;
+    }
+    .play-music i[class*="ti-"]{
+        font-size: 30px;
+        margin: 0 10px;
+        color: #FF4500;
+    }
+    .play-music i[class*="ti-"]:hover{
+        cursor: pointer;
+        opacity: 0.7;
+        background-color: #ccc;
+        padding: 5px;
+    }
+
+    .pause-icon{
+        display: none;
+    }
+    .music-all.playing .play-icon{
+        display: none;
+    }
+    .music-all.playing .pause-icon{
+        display: block;
+    }
+    .ti-volume,.ti-headphone{
+    
+    }
+    .ti-volume{
+        position: absolute;
+        left: 13%;
+        bottom: -5px;
+    }
+    .ti-headphone{
+        position: absolute;
+        right: 13%;
+        bottom: -5px;
+    }
+    /* speaker line */
+    .songs-list{
+        padding: 16px 0;
+        padding-top: 620px;
+    }
+    .song{
+        margin: 16px 20px;
+        position: relative;
+        padding: 16px;
+        box-shadow: 2px 2px 2px #ccc;
+        background-color: rgb(244, 244, 247);
+        min-height: 70px;
+        max-height: 80px;
+    }
+    .song.played{
+        background-color: rgb(223, 59, 59);
+    }
+    
+    .song.played .song-content,
+    .song.played .song-name,
+    .song.played .more-menu{
+        color: #fff;
+    }
+    .song-icon{
+        width: 14%;
+        border-radius: 50%;
+    }
+    .song-content{
+        position: absolute;
+        top: 20%;
+        left: 22%;
+    }
+    .song-name{
+        color: #483D8B;
+    }
+    .song-artist{
+
+    }
+    .more-menu{
+        position: absolute;
+        right: 5%;
+        top: 40%;
+    }
+    .progress {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        background: #ccc;
+        outline: none;
+        opacity: 1;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
+     /*Thiết kế phần để kéo trượt trong rangerslider -- dùng -webkit- để chạy trên Chrome, Opera, Safari, Edge*/
+      .progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+         background: rgb(255, 0, 21);
+        cursor: pointer;
+      }
+}

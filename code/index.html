@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./music.css">
+    <link rel="stylesheet" href="../assess/font/themify-icons/themify-icons.css">
+</head>
+<body>
+<div class="all-player">
+
+            <!-- all -->
+    <div class="music-all"> 
+
+        <!-- music album background -->
+        <div class="music-album">
+            <div class="background-music">
+                <img class="background" src="/assess/music img/faded.jpg" alt="faded">
+            </div>
+
+            <!-- music content -->
+            <div class="music-content">
+                <h2 class="now-playing">Now Playing:</h2>
+                <h1 class="music-name">Nova</h1>
+                <p class="music-artist">Ahrix</p>
+            </div>
+
+            <div class="play-music">
+                <i class="ti-loop loop-icon"></i>
+                <i class="ti-control-skip-backward pre-icon"></i>
+                <div class="play-toggle">
+                    <i class="ti-control-play play-icon"></i>
+                    <i class="ti-control-pause pause-icon"></i>
+                </div>
+                <i class="ti-control-skip-forward next-icon"></i>
+                <i class="ti-control-shuffle exchange-icon"></i>
+            </div>
+          <!-- music line  -->
+                <div class="line">
+                    <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                </div>
+        </div>   
+            <div class="songs-list">
+
+            </div>
+        
+    <audio id="audio" src=""></audio>
+    </div>
+</div>
+    <script src="./music.js"></script>
+</body>
+</html>
