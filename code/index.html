@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./music.css">
-    <link rel="stylesheet" href="../assess/font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../assess/fontawesome-free-6.0.0-web/css/all.css">
 </head>
 <body>
 <div class="all-player">
@@ -22,25 +22,30 @@
 
             <!-- music content -->
             <div class="music-content">
-                <h2 class="now-playing">Now Playing:</h2>
                 <h1 class="music-name">Nova</h1>
                 <p class="music-artist">Ahrix</p>
+
+                <div class="play-music">
+                    <i class="fa-solid fa-rotate-right loop-icon"></i>
+                    <i class="fa-solid fa-backward pre-icon"></i>
+                    <div class="play-toggle">
+                        <i class="fa-solid fa-circle-play play-icon"></i>
+                        <i class="fa-solid fa-pause pause-icon"></i>
+                    </div>
+                    <i class="fa-solid fa-forward next-icon"></i>
+                    <i class="fa-solid fa-shuffle exchange-icon"></i>
+                </div>
+
+                          <!-- music line  -->
+                          <div class="line">
+                            <div class="current-time">00:00</div>
+                            <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                            <div class="duration-time">00:00</div>
+                        </div>
             </div>
 
-            <div class="play-music">
-                <i class="ti-loop loop-icon"></i>
-                <i class="ti-control-skip-backward pre-icon"></i>
-                <div class="play-toggle">
-                    <i class="ti-control-play play-icon"></i>
-                    <i class="ti-control-pause pause-icon"></i>
-                </div>
-                <i class="ti-control-skip-forward next-icon"></i>
-                <i class="ti-control-shuffle exchange-icon"></i>
-            </div>
-          <!-- music line  -->
-                <div class="line">
-                    <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
-                </div>
+
+
         </div>   
             <div class="songs-list">
 

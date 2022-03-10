@@ -31,6 +31,8 @@ const randomBtn = s1('.exchange-icon')
 const pause = s1('.pause-icon')
 const line = s1('.line')
 const menu = s1('.more-menu')
+var timeNow = s1('.current-time')
+var durationNow = s1('.duration-time')
 
 const musicAll = s1('.music-all')
 const allPlayer = s1('.all-player')
@@ -50,10 +52,10 @@ const playList = {
     },
     songs: [
         {
-            name: 'Faded',
-            artist: 'Alan Walker',
-            img: '../assess/music img/faded.jpg',
-            song: '../assess/music/y2meta.com - Alan Walker - Faded (320 kbps).mp3'
+            name: 'Đoạn Tuyệt Nàng Đi',
+            artist: 'Phát Huy T4',
+            img: '../assess/music img/đoạn tuyệt nàng đi.jpg',
+            song: '../assess/music/y2meta.com - Đoạn Tuyệt Nàng Đi (Frexs Remix) _ Thẹn Thùng Nhìn Em Quay Gót Đi Mãi - PHÁT HUY T4 (128 kbps).mp3'
         },
         {
             name: 'On & On',
@@ -130,7 +132,7 @@ const playList = {
                 <h3 class="song-name">${song.name}</h3>
                 <p class="song-artist">${song.artist}</p>
             </div>
-            <i class="ti-more-alt more-menu"></i>
+            <i class="fa-solid fa-bars more-menu"></i>
         </div>
             `
         })
@@ -225,6 +227,28 @@ const playList = {
             if (audio.duration) {
                 line.value = Math.floor((audio.currentTime / audio.duration)*100)
             }
+
+            var Timenow = audio.currentTime
+
+            var minutes = Math.floor(Timenow/60)
+            var secs = Math.floor(Timenow % 60)
+
+            if (secs <10 && minutes < 10) {
+                timeNow.textContent = `0${minutes}:0${secs}`
+            } else if (secs > 10 && minutes <10) {
+                timeNow.textContent = `0${minutes}:${secs}`
+            } else if (secs < 10 && minutes > 10) {
+                timeNow.textContent = `${minutes}:0${secs}`
+            }
+
+            if (audio.duration) {
+                var TimeDuration = audio.duration
+                var minutesDuration = Math.floor(TimeDuration/60)
+                var secsDuration = Math.floor(TimeDuration % 60)
+                
+                durationNow.textContent = `${minutesDuration}:${secsDuration}`
+            }
+            
         }
 
         line.onchange = function () {
@@ -328,4 +352,5 @@ const playList = {
 }
 
 playList.start()
+
 
